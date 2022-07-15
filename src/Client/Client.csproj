@@ -15,6 +15,7 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.0-preview.2.22153.2" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.0-preview.2.22153.2" PrivateAssets="all" />
+		<PackageReference Include="System.Text.Json" Version="7.0.0-preview.6.22324.4" />
 	</ItemGroup>
 
   <ItemGroup>
