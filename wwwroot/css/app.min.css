@@ -527,6 +527,18 @@ video {
 .table {
   display: table;
 }
+.h-screen {
+  height: 100vh;
+}
+.w-screen {
+  width: 100vw;
+}
+.items-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
 .bg-gray-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
