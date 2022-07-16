@@ -14,6 +14,10 @@ jobs:
       with:
         dotnet-version: 7.0.x
         include-prerelease: true
+      
+    - name: Init NPM
+      run: npm install tailwindcss postcss autoprefixer postcss-cli
+      
     - name: Publish with dotnet
       run: dotnet publish --configuration Release --output build
     - name: Deploy to Github Pages
