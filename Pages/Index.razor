@@ -3,7 +3,7 @@
 
 <PageTitle>Index</PageTitle>
 
-<TextEditor @bind-Text="@Code" />
+<textarea class="border-2 min-w-[50%] min-h-screen" @bind="@Code" />
 
 <p role="status">Current Error Count: @errorCount</p>
 <p role="status">Error: @error</p>
@@ -19,13 +19,16 @@
 
 	private void Compile()
 	{
-		var p = Parser.Parse(new SourceDocument("web.back", Code));
+		var p = Parser.Parse(new SourceDocument("playground.back", Code));
 
 		errorCount = p.Messages.Count;
 
 		if (errorCount > 0)
 		{
-			error = string.Join("\n", p.Messages);
+			error = string.Join("\n", p.Messages.Select(_=> _.ToString()));
+		}
+		else {
+			error = "";
 		}
 	}
 }
