@@ -4,12 +4,8 @@
 
 <h1>Hello, world!</h1>
 
-<div class="bg-gray-50">
-        <div class="mx-auto py-12 px-4">
-            <div class="mt-8 flex">
-                <button class="bg-zinc-900 hover:bg-red-600">
-                    Download
-                </button>
-            </div>
-        </div>
-    </div>
+<input class="border-2 min-w-[50%]" @bind="text" type="text" />
+
+@code {
+	public string text { get; set; } = "";	
+}
