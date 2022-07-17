@@ -1,11 +1,31 @@
 ﻿@page "/"
+@using Backlang.Codeanalysis.Parsing
 
 <PageTitle>Index</PageTitle>
 
-<h1>Hello, world!</h1>
+<TextEditor @bind-Text="@Code" />
 
-<input class="border-2 min-w-[50%]" @bind="text" type="text" />
+<p role="status">Current Error Count: @errorCount</p>
+<p role="status">Error: @error</p>
+<p role="status">text: @Code</p>
+
+<button class="btn btn-primary rounded-md m-3" @onclick="Compile">Compile</button>
 
 @code {
-	public string text { get; set; } = "";	
+	public string Code { get; set; }
+
+	private int errorCount = 0;
+	private string error = "";
+
+	private void Compile()
+	{
+		var p = Parser.Parse(new SourceDocument("web.back", Code));
+
+		errorCount = p.Messages.Count;
+
+		if (errorCount > 0)
+		{
+			error = string.Join("\n", p.Messages);
+		}
+	}
 }
