@@ -1,19 +1,19 @@
 /** @type {import('tailwindcss').Config} */
-const colors = require('tailwindcss/colors');
-const defaultTheme = require('tailwindcss/defaultTheme')
+const colors = require("tailwindcss/colors");
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
-    content: [
-        './**/*.html',
-        './**/*.razor'
-    ],
+  content: ["./**/*.html", "./**/*.razor"],
 
-    theme: {
-        extend: {
-            fontFamily: {
-                sans: ['Inter var', ...defaultTheme.fontFamily.sans],
-            },
-        },
+  theme: {
+    extend: {
+      fontFamily: {
+        roboto: ["Roboto", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
+        segoe: ["Segoe UI", "sans-serif"],
+        sans: ["Inter var", ...defaultTheme.fontFamily.sans],
+      },
     },
-    plugins: [],
-}
+  },
+  plugins: [],
+};
