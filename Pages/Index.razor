@@ -25,7 +25,7 @@
 	{
 		var p = Parser.Parse(new SourceDocument("playground.back", Code));
 
-		ErrorCount = p.Messages.Count; // somehow p.Messages.Count is 0 ? whut ?
+		ErrorCount = p.Messages.Count;
 
 		if (ErrorCount > 0)
 		{
@@ -33,7 +33,7 @@
 		}
 		else
 		{
-			Error = "yeah so currently errors arent working sad";
+			Error = "";
 		}
 	}
 }
